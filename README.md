@@ -1,1 +1,1 @@
-# IIIT-Guwahati-Institute-Setup
+# IIIT-Guwahati-Institute-GPU-Setup
