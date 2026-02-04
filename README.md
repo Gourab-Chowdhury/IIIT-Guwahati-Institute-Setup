@@ -165,13 +165,14 @@ conda install -c conda-forge jupyterlab -y
 ```
 conda activate vlm
 export CUDA_VISIBLE_DEVICES=0        # choose your GPU
-jupyter notebook --no-browser
+jupyter lab --no-browser
 ```
 Jupyter will try ports 8888 → higher if busy.
 It will print something like:
 ```
 http://localhost:88XX/tree?token=xxxxxxxxxxxxxxxx
 ```
+Go to the browser and paste the IP address given with the token.
 Do NOT press Ctrl+C — that stops the server.
 
 ## Step 7: Access the Jupyter Interface
