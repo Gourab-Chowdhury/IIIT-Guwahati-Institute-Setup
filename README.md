@@ -158,55 +158,39 @@ pip install transformers accelerate datasets jupyterlab
 ```
 or via conda
 ```
-conda install -c conda-forge jupyterlab -y
+conda install -c conda-forge jupyter notebook -y
 ```
 
 ## Step 6: Start Jupyter Notebook with GPU
 ```
 conda activate vlm
 export CUDA_VISIBLE_DEVICES=0        # choose your GPU
-jupyter lab --no-browser
+jupyter notebook --no-browser
 ```
 Jupyter will try ports 8888 → higher if busy.
 It will print something like:
 ```
 http://localhost:88XX/tree?token=xxxxxxxxxxxxxxxx
 ```
-Go to the browser and paste the IP address given with the token.
+Go on your laptop browser, and paste the IP address e.g. `http://localhost:88XX` given with the token.
 Do NOT press Ctrl+C — that stops the server.
 
 ## Step 7: Access the Jupyter Interface
-### Case A: You have SSH access to Bitwise (recommended)
+### You have SSH access to Bitwise (recommended)
 
-Note the port Jupyter printed (e.g., 8856).
+Note the port Jupyter printed (e.g. 88XX).
 Open a new terminal on your laptop (Windows: PowerShell / CMD / Windows Terminal).
 Run:
 ```
-ssh -L 8856:localhost:8856 your_username@<server_ip>
+ssh -L 88XX:localhost:88XX your_username@<server_ip>
 ```
 Replace:
 your_username → your username given by the Institute 
 <server_ip> → the actual server address (Provided By the Institute)
+Change the IP Address(Ex. here 88XX) with the given address in the Bitwise Terminal. 
 
 Keep this SSH terminal open.
-On your laptop browser, go to:
-`http://localhost:8856` Enter the token if asked → you get full Jupyter Notebook interface with GPU access. Copy the Token from the terminal and Paste it in Token section in the notebook. 
-
-### Case B: Web portal only (no direct SSH)
-Unfortunately, port forwarding won’t work. You cannot open Jupyter in your local browser.
-Options:
-
-Use terminal-only workflow (recommended for training):
-```
-conda activate vlm
-export CUDA_VISIBLE_DEVICES=0
-python your_script.py
-```
-
-Ask admin/lab in-charge:
-“Can we get Jupyter Notebook access through the web portal?”
-Some institutes add a “Jupyter” button later.
-Alternative: Use VS Code Remote-SSH (if allowed) — gives full IDE with GPU.
+Copy the Token from the terminal, go the browser and refresh it. A page will open and enter the token there → you get full Jupyter Notebook interface with GPU access.
 
 
 ### Step 8: First Cell in Your Notebook (GPU Verification)
