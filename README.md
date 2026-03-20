@@ -161,7 +161,7 @@ or via conda
 conda install -c conda-forge jupyter notebook -y
 ```
 
-## Step 6: Start Jupyter Notebook with GPU
+## Step 6: Start Jupyter Notebook with GPU (At Bitwise terminal also)
 ```
 conda activate vlm
 export CUDA_VISIBLE_DEVICES=0        # choose your GPU
